@@ -1,0 +1,44 @@
+<div class="col-lg-12">
+    <hr>
+    <h2 class="intro-text text-center">{{ list_title }}
+    </h2>
+    <hr class="detail-separator">
+</div>
+
+{% include 'store/search_form.html' %}
+
+{% if albums|length_is:"0" %}
+    <div class="text-center">
+      Palsambleu ! Nous n'avons trouvé aucun résultat à cette requête. Même pas de quoi se ronger la chique !
+      Partez de nouveau à l'abordage !
+    </div>
+
+{% else %}
+    {% for album in albums %}
+        <div class="col-sm-4 text-center">
+            <a href="{% url 'store:detail' album_id=album.id %}">
+              <img class="img-responsive" src="{{ album.picture }}" alt="{{ album.title }}">
+            </a>
+            <h3><a href="{% url 'store:detail' album_id=album.id %}">{{ album.title }}</a></h3>
+            {% for artist in album.artists.all %}
+                <p>{{ artist.name }}</p>
+            {% endfor %}
+        </div>
+        {% if forloop.counter|divisibleby:3 %}<div class="clearfix"></div>{% endif %}
+    {% endfor %}
+
+{% endif %}
+
+{% if paginate %}
+  <div class="clearfix"></div>
+  <nav aria-label="">
+    <ul class="pager">
+      {% if albums.has_previous %}
+          <li><a href="?page={{ albums.previous_page_number }}">Précédent</a></li>
+      {% endif %}
+      {% if albums.has_next %}
+          <li><a href="?page={{ albums.next_page_number }}">Suivant</a></li>
+      {% endif %}
+    </ul>
+  </nav>
+{% endif %}
