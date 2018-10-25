@@ -86,8 +86,13 @@ WSGI_APPLICATION = 'disquaire_project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'disquaire'
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'disquaire',
+        'USER': 'tom',
+        'PASSWORD': '',
+        'HOST': '',
+        'PORT': '5432'
+
     }
 }
 

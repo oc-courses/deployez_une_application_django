@@ -1,0 +1,18 @@
+language: python
+python:
+        - "3.5"
+
+before_script:
+        - pip install -r requirements.txt
+
+branches:
+    only:
+        - staging
+
+env: DJANGO_SETTINGS_MODULE="disquaire_project.settings.travis"
+
+services:
+        - postgresql
+
+script:
+        - ./manage.py test
