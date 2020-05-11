@@ -22,7 +22,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY', '4i&u(!%shd*0-3$ls)fohsjsd48t(gu%1-ch_wyzk7@#n3bd8e')
-# '-~aO;| F;rE[??/w^zcumh(9'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -87,11 +86,16 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2', # on utilise l'adaptateur postgresql
         'NAME': 'disquaire', # le nom de notre base de données créée précédemment
+<<<<<<< HEAD
         'USER': 'orion', # attention : remplacez par votre nom d'utilisateur !!
         'PASSWORD': 'judas priest',
 <<<<<<< HEAD:disquaire_project/settings.py
         'HOST': 'localhost',
 =======
+=======
+        'USER': '', # attention : remplacez par votre nom d'utilisateur !!
+        'PASSWORD': '',
+>>>>>>> a8756c258afd0031d8ae919c22a6c8df9f37aad6
         'HOST': '',
 >>>>>>> 9ba732f14c9e0c9862f7edc8cc2b5a6ab9ff720c:disquaire_project/settings/__init__.py
         'PORT': '5432',
