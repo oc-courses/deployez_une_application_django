@@ -24,13 +24,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get('SECRET_KEY', '4i&u(!%shd*0-3$ls)fohsjsd48t(gu%1-ch_wyzk7@#n3bd8e')
 # '-~aO;| F;rE[??/w^zcumh(9'
 
-
 # SECURITY WARNING: don't run with debug turned on in production!
-if os.environ.get('ENV') == 'PRODUCTION':
-    DEBUG = False
-else:
-    DEBUG = True
-
+DEBUG = True
 
 ALLOWED_HOSTS = ['178.62.215.75']
 
@@ -58,7 +53,10 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.locale.LocaleMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
+<<<<<<< HEAD:disquaire_project/settings.py
     # 'whitenoise.middleware.WhiteNoiseMiddleware',
+=======
+>>>>>>> 9ba732f14c9e0c9862f7edc8cc2b5a6ab9ff720c:disquaire_project/settings/__init__.py
 ]
 
 ROOT_URLCONF = 'disquaire_project.urls'
@@ -91,7 +89,11 @@ DATABASES = {
         'NAME': 'disquaire', # le nom de notre base de données créée précédemment
         'USER': 'orion', # attention : remplacez par votre nom d'utilisateur !!
         'PASSWORD': 'judas priest',
+<<<<<<< HEAD:disquaire_project/settings.py
         'HOST': 'localhost',
+=======
+        'HOST': '',
+>>>>>>> 9ba732f14c9e0c9862f7edc8cc2b5a6ab9ff720c:disquaire_project/settings/__init__.py
         'PORT': '5432',
     }
 }
@@ -139,6 +141,7 @@ STATIC_URL = '/static/'
 # Django debug toolbar
 INTERNAL_IPS = ['127.0.0.1']
 
+<<<<<<< HEAD:disquaire_project/settings.py
 
 if os.environ.get('ENV') == 'PRODUCTION':
 
@@ -147,3 +150,6 @@ if os.environ.get('ENV') == 'PRODUCTION':
     # Simplified static file serving.
     # https://warehouse.python.org/project/whitenoise/
     # STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+=======
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+>>>>>>> 9ba732f14c9e0c9862f7edc8cc2b5a6ab9ff720c:disquaire_project/settings/__init__.py
