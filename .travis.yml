@@ -12,3 +12,8 @@ services:
 
 script:
   - ./manage.py test
+  
+  # safelist
+branches:
+  only:
+    - staging
